@@ -57,11 +57,56 @@ const func = (a = 20, b = a + c2()) => {
 }
 
 //console.log(func(undefined, 80));
-console.log(func(30));
+//console.log(func(30));
 
 
 
 
+const name = 'WFM';
+const age = 30;
+
+// const obj2 = {
+//   name: name,
+//   age: age
+// };
+const obj2 = {name, age};
+//console.log(obj2);
+
+
+// const createPerson = (name, surname, fieldName, filedPostfix) => {
+//   const fullname = name + ' ' + surname;
+//   const person = {
+//     fullname,
+//     name,
+//     surname,
+//     getJob() {
+//       return 'Front End';
+//     }
+//   };
+//   let finalFieldName = fieldName + filedPostfix;
+//   person[finalFieldName] = 50;
+//   return person;
+// }
+//
+// const person = createPerson('WFM', 'WFM2', 'car', '-name');
+// console.log(person)
+
+
+const createPerson = (name, surname, fieldName, filedPostfix) => {
+  const fullname = name + ' ' + surname;
+  return {
+    fullname,
+    name,
+    surname,
+    getJob() {
+      return 'Front End';
+    },
+    [fieldName + filedPostfix]: 100
+  };
+}
+
+const person = createPerson('WFM', 'WFM2', 'car', '-model');
+console.log(person)
 
 
 
