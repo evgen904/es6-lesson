@@ -1,14 +1,14 @@
 //const q = [4,5,6]
 //console.log(q)
 
-for (let i=0; i<5; i++) {
-  setTimeout(function() {
-    //console.log(i)
-  },1000)
-}
-
-const PI = 3.14;
-let a = 1;
+// for (let i=0; i<5; i++) {
+//   setTimeout(function() {
+//     //console.log(i)
+//   },1000)
+// }
+//
+// const PI = 3.14;
+// let a = 1;
 
 
 // const original = function () {
@@ -22,54 +22,54 @@ let a = 1;
 // }
 
 //const arrow2= (num, num2) => 150 + num * num2;
-const arrow3 = num => 150 + num;
+// const arrow3 = num => 150 + num;
 
 //console.log(arrow3(50))
 
 
-const obj = {
-  name: 'WFM',
-
-  logName: function () {
-    // var self = this;
-    // setTimeout(function () {
-    //   console.log('Name: ' + self.name);
-    // },1000)
-
-    setTimeout(() => {
-      // Используется старый контекст
-      //console.log('Name: ' + this.name);
-    },1000)
-  }
-}
-
-obj.logName();
-
-
-const c = 90;
-const c2 = () => 200;
-
-
-const func = (a = 20, b = a + c2()) => {
-  //undefined || 10
-  //a = a || 10;
-  return a + b;
-}
+// const obj = {
+//   name: 'WFM',
+//
+//   logName: function () {
+//     // var self = this;
+//     // setTimeout(function () {
+//     //   console.log('Name: ' + self.name);
+//     // },1000)
+//
+//     setTimeout(() => {
+//       // Используется старый контекст
+//       //console.log('Name: ' + this.name);
+//     },1000)
+//   }
+// }
+//
+// obj.logName();
+//
+//
+// const c = 90;
+// const c2 = () => 200;
+//
+//
+// const func = (a = 20, b = a + c2()) => {
+//   //undefined || 10
+//   //a = a || 10;
+//   return a + b;
+// }
 
 //console.log(func(undefined, 80));
 //console.log(func(30));
 
 
 
-
-const name = 'WFM';
-const age = 30;
+//
+// const name = 'WFM';
+// const age = 30;
 
 // const obj2 = {
 //   name: name,
 //   age: age
 // };
-const obj2 = {name, age};
+// const obj2 = {name, age};
 //console.log(obj2);
 
 
@@ -110,10 +110,10 @@ const obj2 = {name, age};
 
 
 
-let obj3 = {
-  name2: 'WFM 3',
-  age2: 36
-}
+// let obj3 = {
+//   name2: 'WFM 3',
+//   age2: 36
+// }
 
 // let name2 = obj3.name2;
 // let age2 = obj3.age2;
@@ -188,7 +188,7 @@ let obj3 = {
 
 
 
-const array5 = [1, 2, 3, 4, 5];
+// const array5 = [1, 2, 3, 4, 5];
 
 // for (var i=0; i<array5.length; i++) {
 //   console.log(array5[i]);
@@ -202,16 +202,73 @@ const array5 = [1, 2, 3, 4, 5];
 //   console.log('Item ', item);
 // }
 
-for (let item of 'ABCDFG') {
-  console.log('Item ', item);
+// for (let item of 'ABCDFG') {
+//   console.log('Item ', item);
+// }
+
+
+
+
+
+
+// function Car(name) {
+//   this.name = name;
+// }
+//
+// Car.prototype.logName = function () {
+//   console.log(this.name);
+// };
+//
+// let car = new Car('Audi');
+// car.logName();
+
+
+// class Car {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//
+//   logName() {
+//     console.log(this.name);
+//   }
+//
+//   static staticFunc() {
+//     console.log('I am static!');
+//   }
+// }
+//
+// let car = new Car('BMW');
+// //car.logName();
+// console.log(car.logName === Car.prototype.logName)
+// Car.staticFunc();
+
+
+class Car {
+  constructor(name) {
+    console.log('Car constructor');
+    this.name = name;
+  }
+
+  logName() {
+    console.log('Car name is: ', this.name);
+  }
 }
 
+class BMW extends Car {
+  constructor(name) {
+    super(name);
 
+    console.log('BMW constructor')
+  }
 
+  logName() {
+    super.logName();
+  }
 
+}
 
-
-
+let bmw = new BMW('x6');
+bmw.logName();
 
 
 
