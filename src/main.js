@@ -123,24 +123,49 @@ let obj3 = {
 //let {age2} = obj3;
 //console.log(name2, age2);
 
+//
+// let {name2: n, age2: e} = obj3;
+// console.log(n, e);
+//
+//
+// let array = ['WFM 2', 35, 'red 2'];
+// let array2 = ['WFM 2', 35];
+//
+// // let name4 = array[0];
+// // let age4 = array[1];
+// // let color4 = array[2];
+//
+// let [name4,, color4] = array;
+// let [,, color5='red'] = array2;
+//
+// console.log(color5);
 
-let {name2: n, age2: e} = obj3;
-console.log(n, e);
 
 
-let array = ['WFM 2', 35, 'red 2'];
-let array2 = ['WFM 2', 35];
+// function logStings(num, str, str2, str3) {
+//   console.log(num ,str, str2, str3);
+// }
+// logStings(20, 'WFM', 'WFM2', 'WFM3');
 
-// let name4 = array[0];
-// let age4 = array[1];
-// let color4 = array[2];
-
-let [name4,, color4] = array;
-let [,, color5='red'] = array2;
-
-console.log(color5);
+// function logStings2(num) {
+//   var args = Array.prototype.slice.call(arguments);
+//   console.log(num , args);
+// }
+// logStings2(20, 'WFM', 'WFM2', 'WFM3', 'WFM4');
 
 
+// rest - оставшиеся параметры в функции
+// function logStings3(num, ...args) {
+//   console.log(num , args);
+// }
+// logStings3(20, 'WFM', 'WFM2', 'WFM3', 'WFM4');
+
+// Spread разворачивает массив в такую конструкцию
+function logStings3(num, ...args) {
+  console.log(num , args);
+}
+let spreadArray = ['WFM', 'WFM2', 'WFM3', 'WFM4']
+logStings3(20, ...spreadArray);
 
 
 
