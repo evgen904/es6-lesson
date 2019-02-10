@@ -92,23 +92,53 @@ const obj2 = {name, age};
 // console.log(person)
 
 
-const createPerson = (name, surname, fieldName, filedPostfix) => {
-  const fullname = name + ' ' + surname;
-  return {
-    fullname,
-    name,
-    surname,
-    getJob() {
-      return 'Front End';
-    },
-    [fieldName + filedPostfix]: 100
-  };
+// const createPerson = (name, surname, fieldName, filedPostfix) => {
+//   const fullname = name + ' ' + surname;
+//   return {
+//     fullname,
+//     name,
+//     surname,
+//     getJob() {
+//       return 'Front End';
+//     },
+//     [fieldName + filedPostfix]: 100
+//   };
+// }
+//
+// const person = createPerson('WFM', 'WFM2', 'car', '-model');
+// console.log(person)
+
+
+
+let obj3 = {
+  name2: 'WFM 3',
+  age2: 36
 }
 
-const person = createPerson('WFM', 'WFM2', 'car', '-model');
-console.log(person)
+// let name2 = obj3.name2;
+// let age2 = obj3.age2;
+
+// Если название переменной совпадает с ключем в обьекте, можно писать так
+//let {name2, age2} = obj3;
+//let {age2} = obj3;
+//console.log(name2, age2);
 
 
+let {name2: n, age2: e} = obj3;
+console.log(n, e);
+
+
+let array = ['WFM 2', 35, 'red 2'];
+let array2 = ['WFM 2', 35];
+
+// let name4 = array[0];
+// let age4 = array[1];
+// let color4 = array[2];
+
+let [name4,, color4] = array;
+let [,, color5='red'] = array2;
+
+console.log(color5);
 
 
 
