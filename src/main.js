@@ -169,21 +169,51 @@ let obj3 = {
 
 
 
-let name6 = 'WFM';
+// let name6 = 'WFM';
 //let str1 = 'Hello ' + name6 +', glad to \'see\' you!';
 // let str1 = `Hello '${name6}', glad to see "you"! ${5+10}`;
 
-let html = `
-  <div>
-    <h1>${name}</h1>
-    <span>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, officiis!      
-      </p>    
-    </span>
-  </div>
-`;
-console.log(html);
+// let html = `
+//   <div>
+//     <h1>${name}</h1>
+//     <span>
+//       <p>
+//         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, officiis!
+//       </p>
+//     </span>
+//   </div>
+// `;
+// console.log(html);
+
+
+
+
+const array5 = [1, 2, 3, 4, 5];
+
+// for (var i=0; i<array5.length; i++) {
+//   console.log(array5[i]);
+// }
+
+// array5.forEach(function (item) {
+//   console.log(item)
+// });
+
+// for (let item of array5) {
+//   console.log('Item ', item);
+// }
+
+for (let item of 'ABCDFG') {
+  console.log('Item ', item);
+}
+
+
+
+
+
+
+
+
+
 
 
 
