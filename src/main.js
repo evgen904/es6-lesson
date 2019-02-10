@@ -161,11 +161,33 @@ let obj3 = {
 // logStings3(20, 'WFM', 'WFM2', 'WFM3', 'WFM4');
 
 // Spread разворачивает массив в такую конструкцию
-function logStings3(num, ...args) {
-  console.log(num , args);
-}
-let spreadArray = ['WFM', 'WFM2', 'WFM3', 'WFM4']
-logStings3(20, ...spreadArray);
+// function logStings3(num, ...args) {
+//   console.log(num , args);
+// }
+// let spreadArray = ['WFM', 'WFM2', 'WFM3', 'WFM4']
+// logStings3(20, ...spreadArray);
+
+
+
+let name6 = 'WFM';
+//let str1 = 'Hello ' + name6 +', glad to \'see\' you!';
+// let str1 = `Hello '${name6}', glad to see "you"! ${5+10}`;
+
+let html = `
+  <div>
+    <h1>${name}</h1>
+    <span>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, officiis!      
+      </p>    
+    </span>
+  </div>
+`;
+console.log(html);
+
+
+
+
 
 
 
