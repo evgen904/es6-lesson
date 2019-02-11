@@ -273,41 +273,87 @@
 
 
 
+//
+//
+// let set = new Set();
+//
+// set.add(10);
+// set.add('Hello');
+// set.add({});
+// set.add(10);
+// set.add(10);
+// set.add(10);
+//
+// console.log(set.size);
+//
+//
+// let set2 = new Set([1, 2, 2, 3, 3, 4, 5, 5]);
+// console.log(set2.size);
+//
+//
+// let set3 = new Set().add(2).add(3).add(4).add(6);
+// console.log('Set size', set3.size);
+// console.log('Set has', set3.has(3));
+// console.log('Set delete', set3.delete(3));
+// console.log('Set size', set3.size);
+// console.log('Set has', set3.has(3));
+// console.log('Set clear', set3.clear());
+// console.log('Set size', set3.size);
+//
+//
+// let set4 = new WeakSet();
+//
+// let key = {};
+// set4.add(key);
+// console.log(set4.size);
+// key = null;
+// console.log(set4.size)
 
 
-let set = new Set();
 
-set.add(10);
-set.add('Hello');
-set.add({});
-set.add(10);
-set.add(10);
-set.add(10);
+let map = new Map();
 
-console.log(set.size);
+map.set('name', 'WFM');
+map.set('age', 20);
 
+// console.log(map);
+// console.log(map.get('name'));
 
-let set2 = new Set([1, 2, 2, 3, 3, 4, 5, 5]);
-console.log(set2.size);
+let obj1 = {};
+let obj2 = {};
 
+map.set(obj1, 10);
+map.set(obj2, 50);
 
-let set3 = new Set().add(2).add(3).add(4).add(6);
-console.log('Set size', set3.size);
-console.log('Set has', set3.has(3));
-console.log('Set delete', set3.delete(3));
-console.log('Set size', set3.size);
-console.log('Set has', set3.has(3));
-console.log('Set clear', set3.clear());
-console.log('Set size', set3.size);
+console.log('Size', map.size);
+console.log('Has', map.has(obj2));
+console.log('Delete', map.delete(obj2));
+console.log('Size', map.size);
+console.log('Has', map.has(obj2));
 
 
-let set4 = new WeakSet();
+let map2 = new Map([
+  ['name', 'WFM'],
+  ['age', 20],
+]);
 
-let key = {};
-set4.add(key);
-console.log(set4.size);
-key = null;
-console.log(set4.size)
+console.log(map2);
+
+for (let val of map2.values()) {
+  console.log('Values: ', val);
+}
+for (let key of map2.keys()) {
+  console.log('Keys: ', key);
+}
+for (let entr of map2.entries()) {
+  console.log(`${entr[0]} - ${entr[1]}`);
+}
 
 
+let map3 = new WeakMap();
+let key2 = {};
+map3.set(key2, 'key2');
+console.log('Size', map3.size);
+key2 = null;
+console.log('Size', map3.size);
 
