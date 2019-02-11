@@ -310,50 +310,83 @@
 // console.log(set4.size)
 
 
-
-let map = new Map();
-
-map.set('name', 'WFM');
-map.set('age', 20);
+//
+// let map = new Map();
+//
+// map.set('name', 'WFM');
+// map.set('age', 20);
 
 // console.log(map);
 // console.log(map.get('name'));
+//
+// let obj1 = {};
+// let obj2 = {};
+//
+// map.set(obj1, 10);
+// map.set(obj2, 50);
+//
+// console.log('Size', map.size);
+// console.log('Has', map.has(obj2));
+// console.log('Delete', map.delete(obj2));
+// console.log('Size', map.size);
+// console.log('Has', map.has(obj2));
+//
+//
+// let map2 = new Map([
+//   ['name', 'WFM'],
+//   ['age', 20],
+// ]);
+//
+// console.log(map2);
+//
+// for (let val of map2.values()) {
+//   console.log('Values: ', val);
+// }
+// for (let key of map2.keys()) {
+//   console.log('Keys: ', key);
+// }
+// for (let entr of map2.entries()) {
+//   console.log(`${entr[0]} - ${entr[1]}`);
+// }
+//
+//
+// let map3 = new WeakMap();
+// let key2 = {};
+// map3.set(key2, 'key2');
+// console.log('Size', map3.size);
+// key2 = null;
+// console.log('Size', map3.size);
+//
 
-let obj1 = {};
-let obj2 = {};
 
-map.set(obj1, 10);
-map.set(obj2, 50);
+// import * as extra from './extra';
+// console.log(extra);
 
-console.log('Size', map.size);
-console.log('Has', map.has(obj2));
-console.log('Delete', map.delete(obj2));
-console.log('Size', map.size);
-console.log('Has', map.has(obj2));
+// import {name, age} from './extra';
+// console.log(name, age);
+
+import {age as a} from './extra';
+console.log(a);
 
 
-let map2 = new Map([
-  ['name', 'WFM'],
-  ['age', 20],
-]);
 
-console.log(map2);
+// import {func} from "./extra";
+// func();
 
-for (let val of map2.values()) {
-  console.log('Values: ', val);
-}
-for (let key of map2.keys()) {
-  console.log('Keys: ', key);
-}
-for (let entr of map2.entries()) {
-  console.log(`${entr[0]} - ${entr[1]}`);
-}
+// import func from './extra';
+// func();
 
 
-let map3 = new WeakMap();
-let key2 = {};
-map3.set(key2, 'key2');
-console.log('Size', map3.size);
-key2 = null;
-console.log('Size', map3.size);
+import Car from './extra';
+var car = new Car();
+
+
+
+
+
+
+
+
+
+
 
