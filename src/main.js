@@ -365,8 +365,8 @@
 // import {name, age} from './extra';
 // console.log(name, age);
 
-import {age as a} from './extra';
-console.log(a);
+// import {age as a} from './extra';
+// console.log(a);
 
 
 
@@ -377,8 +377,90 @@ console.log(a);
 // func();
 
 
-import Car from './extra';
-var car = new Car();
+// import Car from './extra';
+// var car = new Car();
+
+
+// Symbol - для создания уникальных полей
+
+let s = Symbol('WFM');
+
+let s2 = Symbol('1');
+let s3 = Symbol('1');
+
+console.log(typeof s);
+
+console.log(s2 === s3);
+
+
+let s4 = Symbol('field');
+let s5 = Symbol('field');
+
+let obj = {
+  age: 20,
+  [s4]: 'WFM'
+};
+
+console.log(obj);
+console.log(obj[s4]);
+
+console.log(Object.getOwnPropertyNames(obj));
+console.log(Object.getOwnPropertySymbols(obj));
+
+
+let num = 1;
+let str = '1';
+let array = [1, 2];
+let obj3 = {name: 'WFM'};
+
+console.log('Number', typeof num[Symbol.iterator]);
+console.log('String', typeof str[Symbol.iterator]);
+console.log('Array', typeof array[Symbol.iterator]);
+console.log('Object', typeof obj3[Symbol.iterator]);
+
+
+// Принцип работы for of
+
+function createIterator(arr) {
+  let cont = 0;
+  return {
+    next () {
+      return cont < arr.length
+        ? {value: arr[cont++], done: false}
+        : {value: undefined, done: true}
+    }
+  }
+}
+
+let iter = createIterator([1, 2, 3, 4]);
+
+console.log(iter.next());
+console.log(iter.next());
+console.log(iter.next());
+console.log(iter.next());
+console.log(iter.next());
+console.log(iter.next());
+
+
+// fibonachi
+
+let fib = {
+  [Symbol.iterator]() {
+    let pre = 0, cur = 1;
+    return {
+      next () {
+        [pre, cur] = [cur, cur + pre];
+        return {value: cur, done: false};
+      }
+    }
+  }
+};
+
+for (let n of fib) {
+  if (n > 1500) break;
+  console.log(n);
+}
+
 
 
 
