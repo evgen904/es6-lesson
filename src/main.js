@@ -546,37 +546,111 @@
 
 
 // Наследование между объектами
+//
+// let obj11 = {a: 1};
+// let obj22 = {b: 2, c: 3};
+//
+// Object.assign(obj11, obj22)
+//
+// console.log('obj11', obj11);
+// console.log('obj22', obj22);
+//
+// console.log('---');
+//
+//
+// let obj111 = {a: 1};
+// let obj222 = {b: 2, c: 3};
+//
+// let obj333 = Object.assign({d: 4}, obj111, obj222);
+//
+// console.log('obj111', obj111);
+// console.log('obj222', obj222);
+// console.log('obj333', obj333);
+//
+// console.log('---');
+//
+// let findedItem = [1, 2, 3, 4].find(x => x > 2);
+// console.log(findedItem);
+//
+// console.log('---');
+//
+// let str = 'Hello';
+// console.log('Repeat: ', str.repeat(3));
+// console.log('StartWith: ', str.startsWith('el', 1));
+// console.log('Includes: ', str.includes('llo', 2));
+//
+// console.log('---');
 
-let obj11 = {a: 1};
-let obj22 = {b: 2, c: 3};
-
-Object.assign(obj11, obj22)
-
-console.log('obj11', obj11);
-console.log('obj22', obj22);
-
-console.log('---');
 
 
-let obj111 = {a: 1};
-let obj222 = {b: 2, c: 3};
+// http://date.jsontest.com/
 
-let obj333 = Object.assign({d: 4}, obj111, obj222);
 
-console.log('obj111', obj111);
-console.log('obj222', obj222);
-console.log('obj333', obj333);
+// Promise
 
-console.log('---');
+function oldDelay(ms, func) {
+  setTimeout(function () {
+    func();
+  }, ms);
+}
 
-let findedItem = [1, 2, 3, 4].find(x => x > 2);
-console.log(findedItem);
+oldDelay(3000, function () {
+  console.log('Old delay passed!');
+});
 
-console.log('---');
 
-let str = 'Hello';
-console.log('Repeat: ', str.repeat(3));
-console.log('StartWith: ', str.startsWith('el', 1));
-console.log('Includes: ', str.includes('llo', 2));
+// Promise для асинхроных запросов, resolve функция при успешном выполнении, reject функция при провале.
 
-console.log('---');
+function delay(ms = 1000) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve();
+    }, ms)
+  })
+}
+
+// then выполняется если все верно т.е. resolve(), catch при провале т.е. reject
+
+delay(4000)
+  .then(() => {
+    console.log('new delay passed!');
+  })
+  .catch(() => {
+    console.log('error');
+  });
+
+
+
+import $ from 'jquery';
+
+let promise = new Promise((resolve, reject) => {
+  $.ajax({
+    url: 'https://reqres.in/api/users?page=2',
+    dataType: 'json',
+    success: function (response) {
+      resolve(response);
+    },
+    error: function (error) {
+      reject(error);
+    }
+  })
+});
+
+promise
+  .then((data) => {
+    return data.data;
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.info(error);
+    console.info('Server error');
+  });
+
+
+
+
+
+
+
