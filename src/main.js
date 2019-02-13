@@ -461,91 +461,122 @@
 //   console.log(n);
 // }
 
+//
+// function* gen() {
+//   yield 11;
+//   yield 22;
+//   yield 33;
+// }
+//
+// let iter = gen();
+//
+// console.log(iter.next());
+// console.log(iter.next());
+// console.log(iter.next());
+// console.log(iter.next());
+//
+//
+// console.log('---');
+//
+//
+// function* g1() {
+//   yield 1;
+//   yield* g2();
+//   yield 4;
+// }
+//
+// function* g2() {
+//   yield 2;
+//   yield 3;
+// }
+//
+// let iter2 = g1();
+//
+// console.log(iter2.next());
+// console.log(iter2.next());
+// console.log(iter2.next());
+// console.log(iter2.next());
+// console.log(iter2.next());
+//
+// console.log('---');
+//
+// function* g3() {
+//   yield* [1, 2, 3];
+// }
+//
+// let iter3 = g3();
+//
+// console.log(iter3.next());
+// console.log(iter3.next());
+// console.log(iter3.next());
+// console.log(iter3.next());
+//
+//
+// console.log('---');
+//
+// function* genRange(start = 0, end = 100, step = 10) {
+//   while (start < end) {
+//     yield start;
+//     start += step;
+//   }
+// }
+//
+// for (let n of genRange(10, 50, 2)) {
+//   console.log(n);
+// }
+//
+//
+// console.log('---');
+//
+//
+// let fib2 = {
+//   *[Symbol.iterator]() {
+//     let cur = 1, pre = 0;
+//     for (;;) {
+//       [cur, pre] = [cur + pre, cur];
+//       yield cur;
+//     }
+//   }
+// };
+//
+// for (let n of fib2) {
+//   if (n > 3000) break;
+//   console.log(n);
+// }
 
-function* gen() {
-  yield 11;
-  yield 22;
-  yield 33;
-}
 
-let iter = gen();
+// Наследование между объектами
 
-console.log(iter.next());
-console.log(iter.next());
-console.log(iter.next());
-console.log(iter.next());
+let obj11 = {a: 1};
+let obj22 = {b: 2, c: 3};
 
+Object.assign(obj11, obj22)
+
+console.log('obj11', obj11);
+console.log('obj22', obj22);
 
 console.log('---');
 
 
-function* g1() {
-  yield 1;
-  yield* g2();
-  yield 4;
-}
+let obj111 = {a: 1};
+let obj222 = {b: 2, c: 3};
 
-function* g2() {
-  yield 2;
-  yield 3;
-}
+let obj333 = Object.assign({d: 4}, obj111, obj222);
 
-let iter2 = g1();
-
-console.log(iter2.next());
-console.log(iter2.next());
-console.log(iter2.next());
-console.log(iter2.next());
-console.log(iter2.next());
+console.log('obj111', obj111);
+console.log('obj222', obj222);
+console.log('obj333', obj333);
 
 console.log('---');
 
-function* g3() {
-  yield* [1, 2, 3];
-}
-
-let iter3 = g3();
-
-console.log(iter3.next());
-console.log(iter3.next());
-console.log(iter3.next());
-console.log(iter3.next());
-
+let findedItem = [1, 2, 3, 4].find(x => x > 2);
+console.log(findedItem);
 
 console.log('---');
 
-function* genRange(start = 0, end = 100, step = 10) {
-  while (start < end) {
-    yield start;
-    start += step;
-  }
-}
-
-for (let n of genRange(10, 50, 2)) {
-  console.log(n);
-}
-
+let str = 'Hello';
+console.log('Repeat: ', str.repeat(3));
+console.log('StartWith: ', str.startsWith('el', 1));
+console.log('Includes: ', str.includes('llo', 2));
 
 console.log('---');
-
-
-let fib2 = {
-  *[Symbol.iterator]() {
-    let cur = 1, pre = 0;
-    for (;;) {
-      [cur, pre] = [cur + pre, cur];
-      yield cur;
-    }
-  }
-};
-
-for (let n of fib2) {
-  if (n > 3000) break;
-  console.log(n);
-}
-
-
-
-
-
-
